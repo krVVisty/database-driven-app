@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = "https://database-driven-app-6ix4.onrender.com"; // frontend now points to deployed backend
 
 export default function App() {
   const [posts, setPosts] = useState([]);
