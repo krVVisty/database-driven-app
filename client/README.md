@@ -65,8 +65,8 @@ The goal of this project was to consolidate my understanding of full-stack devel
 
 ## Deployment URLs
 
-- **Backend (API):** [https://database-driven-app-6ix4.onrender.com](https://database-driven-app-6ix4.onrender.com)
-- **Frontend (React App):** _(Insert your deployed frontend URL here)_
+- **Backend (API):** [https://database-driven-app-6ix4.onrender.com]
+- **Frontend (React App):** [(https://database-driven-app-1.onrender.com/)]
 
 ---
 
