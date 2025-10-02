@@ -1,9 +1,6 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import pkg from "pg";
-
-dotenv.config();
 const { Pool } = pkg;
 
 const app = express();
@@ -12,13 +9,16 @@ app.use(express.json());
 
 // --- DB connection ---
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL, // works with Render or Supabase
-  ssl: { rejectUnauthorized: false }, // for cloud DB
+  user: "postgres",
+  host: "db.avcbcudxvaccbvjjqeql.supabase.co", // Session Pooler IPv4
+  database: "postgres",
+  password: "hZrFqt2iFQQckXYp",
+  port: 5432,
+  ssl: { rejectUnauthorized: false },
 });
 
 // --- Routes ---
 
-// GET all posts
 app.get("/posts", async (req, res) => {
   try {
     const result = await pool.query(
@@ -31,7 +31,6 @@ app.get("/posts", async (req, res) => {
   }
 });
 
-// POST a new post
 app.post("/posts", async (req, res) => {
   const { title, content } = req.body;
   try {
@@ -46,6 +45,6 @@ app.post("/posts", async (req, res) => {
   }
 });
 
-// Start server
+// --- Start server ---
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
