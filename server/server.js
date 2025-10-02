@@ -8,9 +8,10 @@ app.use(cors());
 app.use(express.json());
 
 // --- DB connection ---
+// 🔹 Fixed IPv4 Session Pooler Supabase
 const pool = new Pool({
   user: "postgres",
-  host: "db.avcbcudxvaccbvjjqeql.supabase.co", // Session Pooler IPv4
+  host: "aws-1-eu-west-2.pooler.supabase.com", // <-- changed from db.avcbcudxvaccbvjjqeql.supabase.co
   database: "postgres",
   password: "hZrFqt2iFQQckXYp",
   port: 5432,
